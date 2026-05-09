@@ -1,74 +1,148 @@
-```html
-<!-- ========================= -->
-<!-- FILE: support.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support | Offshore Logbook</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #081826;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #071722;
             color: white;
             line-height: 1.7;
+        }
+
+        nav {
+            background-color: rgba(7, 23, 34, 0.95);
+            padding: 15px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(143, 214, 210, 0.2);
+        }
+
+        nav a {
+            color: #8fd6d2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: radial-gradient(circle at top, #123d55, #071722 65%);
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .logo {
+            width: 95px;
+            margin-bottom: 15px;
         }
 
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 50px 20px;
-        }
-
-        h1 {
-            color: #8fd6d2;
+            padding: 45px 20px;
         }
 
         .card {
-            background-color: #102738;
-            padding: 25px;
-            border-radius: 16px;
-            margin-top: 20px;
+            background: linear-gradient(145deg, #102738, #0c2030);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(143, 214, 210, 0.12);
+        }
+
+        h1, h2 {
+            color: #8fd6d2;
         }
 
         a {
             color: #8fd6d2;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 13px 22px;
+            background-color: #0f8c8c;
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            background-color: #11a3a3;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            color: #8aa4b5;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(143, 214, 210, 0.12);
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 6px 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+</nav>
+
+<header>
+    <img src="logo.png" alt="Thuinn Subsea Logo" class="logo">
+    <h1>Offshore Logbook Support</h1>
+    <p>Help, troubleshooting and contact details</p>
+</header>
+
 <div class="container">
 
-    <h1>Offshore Logbook Support</h1>
-
     <div class="card">
-        <h2>Support Contact</h2>
+        <h2>Contact Support</h2>
 
         <p>
-            Email:
-            <a href="mailto:ryan@thuinnsubsea.co.uk">
+            For support, bug reports or feedback, email:
+        </p>
+
+        <p>
+            <a class="button" href="mailto:ryan@thuinnsubsea.co.uk">
                 ryan@thuinnsubsea.co.uk
             </a>
         </p>
     </div>
 
     <div class="card">
-        <h2>Current Features</h2>
+        <h2>What Offshore Logbook Supports</h2>
 
         <ul>
             <li>Offshore work history tracking</li>
             <li>ROV and subsea logbook management</li>
-            <li>Certificate tracking</li>
+            <li>Certificate, training and competence records</li>
             <li>Evidence image and PDF attachments</li>
-            <li>Verifier signatures</li>
-            <li>CV and PDF exports</li>
+            <li>Verifier and offshore manager signatures</li>
+            <li>CV, work matrix and PDF exports</li>
             <li>Local backup and restore</li>
         </ul>
     </div>
@@ -77,8 +151,8 @@
         <h2>Troubleshooting</h2>
 
         <p>
-            If exports, backups or evidence files are not appearing correctly,
-            please restart the app and try again.
+            If exports, backups or evidence files are not appearing correctly, please restart the app
+            and try again.
         </p>
 
         <p>
@@ -90,11 +164,28 @@
             <li>iOS version</li>
             <li>App version</li>
             <li>Description of the issue</li>
+            <li>Steps taken before the issue occurred</li>
         </ul>
+    </div>
+
+    <div class="card">
+        <h2>Privacy Reminder</h2>
+
+        <p>
+            Offshore Logbook is designed as a local-first app. Records are stored on your device unless
+            you choose to export, back up or share them.
+        </p>
+
+        <p>
+            Read the full <a href="privacy.html">Privacy Policy</a>.
+        </p>
     </div>
 
 </div>
 
+<footer>
+    © 2026 Thuinn Subsea · Offshore Logbook
+</footer>
+
 </body>
 </html>
-```
