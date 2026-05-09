@@ -1,141 +1,236 @@
-```html
-<!-- ========================= -->
-<!-- FILE: index.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thuinn Subsea | Offshore Logbook</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #081826;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #071722;
             color: white;
             line-height: 1.6;
         }
 
+        nav {
+            background-color: rgba(7, 23, 34, 0.95);
+            padding: 15px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(143, 214, 210, 0.2);
+        }
+
+        nav a {
+            color: #8fd6d2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         header {
-            background: linear-gradient(to bottom, #0b2538, #081826);
-            padding: 80px 20px;
+            background: radial-gradient(circle at top, #123d55, #071722 65%);
+            padding: 90px 20px 70px;
             text-align: center;
         }
-.logo {
-    width: 140px;
-    margin-bottom: 20px;
-}
-        
+
+        .logo {
+            width: 150px;
+            margin-bottom: 25px;
+        }
+
         h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin: 0;
             letter-spacing: 2px;
         }
 
         h2 {
             font-weight: 400;
             color: #8fd6d2;
+            margin-top: 12px;
+        }
+
+        .tagline {
+            max-width: 720px;
+            margin: 25px auto 0;
+            color: #d7e6ec;
+            font-size: 1.1rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1050px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 45px 20px;
         }
 
         .card {
-            background-color: #102738;
+            background: linear-gradient(145deg, #102738, #0c2030);
             padding: 30px;
-            border-radius: 18px;
+            border-radius: 20px;
             margin-bottom: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(143, 214, 210, 0.12);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background-color: rgba(255, 255, 255, 0.04);
+            padding: 22px;
+            border-radius: 16px;
+            border: 1px solid rgba(143, 214, 210, 0.12);
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: #8fd6d2;
         }
 
         a {
             color: #8fd6d2;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #8aa4b5;
-            font-size: 0.9rem;
         }
 
         .button {
             display: inline-block;
-            margin-top: 15px;
-            padding: 12px 20px;
+            margin: 10px 8px 0;
+            padding: 13px 22px;
             background-color: #0f8c8c;
             color: white;
             border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+        }
+
+        .button.secondary {
+            background-color: transparent;
+            border: 1px solid #8fd6d2;
+            color: #8fd6d2;
         }
 
         .button:hover {
             background-color: #11a3a3;
             text-decoration: none;
         }
+
+        .button.secondary:hover {
+            background-color: rgba(143, 214, 210, 0.12);
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            color: #8aa4b5;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(143, 214, 210, 0.12);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px 10px;
+            }
+
+            header {
+                padding: 60px 20px 50px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+</nav>
 
 <header>
     <img src="logo.png" alt="Thuinn Subsea Logo" class="logo">
 
     <h1>THUINN SUBSEA</h1>
 
-    <h2>
-        Offshore Logbook for offshore, subsea and ROV professionals
-    </h2>
+    <h2>Offshore Logbook for offshore, subsea and ROV professionals</h2>
+
+    <p class="tagline">
+        A local-first iOS app for recording offshore experience, managing certificates,
+        attaching evidence and exporting professional logbook records.
+    </p>
+
+    <a class="button" href="support.html">Get Support</a>
+    <a class="button secondary" href="privacy.html">Privacy Policy</a>
 </header>
 
 <div class="container">
 
     <div class="card">
-        <h3>Offshore Logbook</h3>
+        <h2>Offshore Logbook</h2>
 
         <p>
-            Offshore Logbook helps offshore professionals record work history,
-            manage certificates, attach evidence and export professional reports.
+            Offshore Logbook helps offshore, subsea and ROV professionals keep structured career records
+            on device. Record trips, roles, vessels, ROV systems, certificates, verifier signatures,
+            evidence files and export-ready career summaries.
         </p>
 
         <p>
-            Built for ROV, subsea, survey, inspection and offshore personnel.
+            Built around a private, local-first approach: your records stay on your device unless you choose
+            to export, back up or share them.
         </p>
+    </div>
 
-        <a class="button" href="support.html">Support</a>
-        <a class="button" href="privacy.html">Privacy Policy</a>
+    <div class="grid">
+        <div class="feature">
+            <h3>Logbook Records</h3>
+            <p>Track offshore work history, roles, vessels, projects, dates and technical experience.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Evidence Attachments</h3>
+            <p>Attach supporting images, PDFs, signatures and certificate evidence to your records.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Professional Exports</h3>
+            <p>Create CV-style summaries, work matrices and PDF logbook exports for professional use.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Local-First Privacy</h3>
+            <p>No app-managed accounts, no backend storage and no automatic upload of personal records.</p>
+        </div>
     </div>
 
     <div class="card">
-        <h3>Features</h3>
+        <h2>Designed for Offshore Professionals</h2>
 
-        <ul>
-            <li>Digital offshore logbook tracking</li>
-            <li>Certificate and training management</li>
-            <li>Evidence photo and PDF attachments</li>
-            <li>Verifier signatures</li>
-            <li>Professional CV and PDF exports</li>
-            <li>Local-first private storage</li>
-        </ul>
+        <p>
+            Suitable for ROV personnel, subsea teams, survey, inspection, deck crew, client representatives,
+            offshore managers and other offshore professionals who need organised career records.
+        </p>
     </div>
 
 </div>
 
 <footer>
-    © 2026 Thuinn Subsea
+    © 2026 Thuinn Subsea · Offshore Logbook
 </footer>
 
 </body>
 </html>
-```
