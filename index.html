@@ -9,12 +9,17 @@
     <style>
         :root {
             --navy: #172f52;
-            --deep-navy: #0b1f35;
+            --deep-navy: #081a2c;
             --teal: #00a7b5;
             --cyan: #1598c7;
-            --light: #f6fbfc;
+            --pale: #f5fbfc;
             --text: #1b2b3f;
-            --muted: #5f7185;
+            --muted: #617387;
+            --line: rgba(23, 47, 82, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -26,60 +31,159 @@
         }
 
         header {
-            text-align: center;
-            padding: 70px 20px 55px;
             background:
-                radial-gradient(circle at top right, rgba(0, 167, 181, 0.16), transparent 35%),
-                linear-gradient(to bottom, #ffffff, var(--light));
+                radial-gradient(circle at top right, rgba(0, 167, 181, 0.18), transparent 38%),
+                linear-gradient(135deg, #ffffff 0%, #f5fbfc 58%, #eaf8fb 100%);
+            padding: 44px 20px 72px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar {
+            max-width: 1120px;
+            margin: 0 auto 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand-small {
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: 1.5px;
+        }
+
+        .topbar a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            margin-left: 22px;
+        }
+
+        .topbar a:hover {
+            color: var(--teal);
+        }
+
+        .hero {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 46px;
+            align-items: center;
         }
 
         .logo {
-            width: 560px;
-            max-width: 92%;
-            margin-bottom: 25px;
+            width: 520px;
+            max-width: 100%;
+            margin-bottom: 22px;
         }
 
         .eyebrow {
             color: var(--teal);
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 3px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
         }
 
         h1 {
             color: var(--navy);
-            font-size: 3rem;
-            margin: 12px 0 10px;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            color: var(--navy);
-            font-size: 2rem;
-            margin-top: 0;
+            font-size: 3.45rem;
+            line-height: 1.08;
+            margin: 0 0 22px;
+            letter-spacing: -1px;
         }
 
         .intro {
-            max-width: 760px;
-            margin: 20px auto 0;
             color: var(--muted);
             font-size: 1.15rem;
+            max-width: 680px;
+            margin-bottom: 28px;
         }
 
-        .container {
-            max-width: 1080px;
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--teal), var(--cyan));
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 14px 28px rgba(0, 167, 181, 0.24);
+        }
+
+        .button.secondary {
+            background: white;
+            color: var(--navy);
+            border: 1px solid rgba(23, 47, 82, 0.18);
+            box-shadow: none;
+        }
+
+        .button:hover {
+            opacity: 0.92;
+        }
+
+        .hero-panel {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: 0 24px 60px rgba(23, 47, 82, 0.12);
+        }
+
+        .hero-panel h2 {
+            margin-top: 0;
+            color: var(--navy);
+            font-size: 1.45rem;
+        }
+
+        .panel-list {
+            padding-left: 20px;
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .panel-list li {
+            margin-bottom: 10px;
+        }
+
+        main {
+            max-width: 1120px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 58px 20px;
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 0;
         }
 
         .card {
             background: white;
             border-radius: 24px;
-            padding: 34px;
-            margin-bottom: 28px;
-            border: 1px solid rgba(23, 47, 82, 0.1);
+            padding: 32px;
+            border: 1px solid var(--line);
             box-shadow: 0 18px 45px rgba(23, 47, 82, 0.08);
+            margin-bottom: 28px;
         }
 
         .highlight {
@@ -91,75 +195,129 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 22px;
+            margin-bottom: 34px;
         }
 
         .feature {
-            background: var(--light);
-            border-radius: 20px;
+            background: var(--pale);
+            border-radius: 22px;
             padding: 26px;
             border: 1px solid rgba(0, 167, 181, 0.16);
         }
 
-        .feature h3 {
-            color: var(--navy);
-            margin-top: 0;
-        }
-
         .feature-line {
-            width: 46px;
+            width: 48px;
             height: 4px;
             border-radius: 99px;
             background: linear-gradient(to right, var(--teal), var(--cyan));
             margin-bottom: 18px;
         }
 
+        .feature h3 {
+            color: var(--navy);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .dark-band {
+            background:
+                radial-gradient(circle at top left, rgba(0, 167, 181, 0.22), transparent 35%),
+                linear-gradient(135deg, var(--deep-navy), var(--navy));
+            color: white;
+            border-radius: 30px;
+            padding: 38px;
+            margin: 34px 0;
+        }
+
+        .dark-band h2,
+        .dark-band h3 {
+            color: white;
+        }
+
+        .dark-band p {
+            color: #d7e6ec;
+        }
+
+        .app-badge {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #8fd6d2;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
         a {
             color: var(--teal);
-            font-weight: 700;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 22px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--teal), var(--cyan));
-            color: white;
-            text-decoration: none;
             font-weight: 800;
-            margin-top: 8px;
-            box-shadow: 0 12px 25px rgba(0, 167, 181, 0.22);
-        }
-
-        .button:hover {
-            opacity: 0.92;
         }
 
         footer {
             text-align: center;
-            padding: 35px 20px;
+            padding: 36px 20px;
             color: var(--muted);
             font-size: 0.9rem;
-            background: var(--light);
-            border-top: 1px solid rgba(23, 47, 82, 0.08);
+            background: var(--pale);
+            border-top: 1px solid var(--line);
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 850px) {
+            .hero,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 34px;
+            }
+
+            .topbar a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+
+            h1 {
+                font-size: 2.55rem;
+            }
+        }
+
+        @media (max-width: 560px) {
             header {
-                padding: 50px 18px 40px;
+                padding: 32px 18px 50px;
             }
 
             h1 {
                 font-size: 2.15rem;
             }
 
-            h2 {
-                font-size: 1.55rem;
+            .card,
+            .dark-band {
+                padding: 25px;
             }
 
-            .card {
-                padding: 26px;
+            .button {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -168,65 +326,191 @@
 <body>
 
 <header>
-    <img src="thuinn-logo.png" alt="Thuinn Subsea Limited Logo" class="logo">
+    <div class="topbar">
+        <div class="brand-small">THUINN SUBSEA LIMITED</div>
 
-    <div class="eyebrow">Subsea · Offshore · Marine</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#digital">Digital Tools</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 
-    <h1>Innovative Subsea Services</h1>
+    <div class="hero">
+        <div>
+            <img src="thuinn-logo.png" alt="Thuinn Subsea Limited Logo" class="logo">
 
-    <p class="intro">
-        Thuinn Subsea Limited provides practical subsea and offshore support with a focus on
-        operational reliability, clear communication and professional delivery.
-    </p>
+            <div class="eyebrow">ROV · Offshore · Technical Support · Digital Tools</div>
+
+            <h1>Subsea experience, offshore support and practical digital tools.</h1>
+
+            <p class="intro">
+                Thuinn Subsea Limited provides ROV and offshore technical support,
+                equipment management input, operational assurance and app development
+                focused on the needs of offshore users.
+            </p>
+
+            <div class="button-row">
+                <a class="button" href="mailto:ryan@thuinnsubsea.co.uk">Contact Thuinn Subsea</a>
+                <a class="button secondary" href="#digital">Digital tools for offshore users</a>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <h2>Focused offshore support</h2>
+
+            <ul class="panel-list">
+                <li>ROV operations support and operational readiness</li>
+                <li>Technical assurance and equipment management</li>
+                <li>FAT support, system validation and project delivery input</li>
+                <li>Digital app tools designed around offshore workflows</li>
+            </ul>
+        </div>
+    </div>
 </header>
 
-<div class="container">
+<main>
 
-    <div class="card highlight">
-        <h2>Subsea and Offshore Support</h2>
+    <section class="card highlight">
+        <h2>About Thuinn Subsea</h2>
 
         <p>
-            Thuinn Subsea Limited supports offshore and subsea operations across ROV,
-            marine, inspection and project environments.
+            Thuinn Subsea Limited supports subsea and offshore projects with a focus on ROV operations,
+            technical assurance, equipment readiness and clear project delivery.
         </p>
 
         <p>
-            Built around industry experience, practical offshore awareness and a detail-focused
-            approach to technically demanding work scopes.
+            Alongside operational support, Thuinn Subsea is developing practical software tools for offshore
+            professionals, helping users manage records, evidence, certificates and project information more
+            effectively.
         </p>
-    </div>
+    </section>
 
-    <div class="grid">
+    <section id="services">
+        <div class="section-heading">
+            <h2>Services</h2>
+            <p>
+                Practical support for offshore teams, operators, contractors and suppliers working across
+                subsea and ROV environments.
+            </p>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>ROV Operations Support</h3>
+                <p>
+                    Support for ROV operations, offshore readiness, project planning and operational delivery.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>Technical Assurance</h3>
+                <p>
+                    Practical assurance support for systems, procedures, documentation and operational preparation.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>Equipment Management</h3>
+                <p>
+                    Support for asset readiness, equipment tracking, mobilisation preparation and supplier coordination.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>FAT & System Validation</h3>
+                <p>
+                    Support for factory acceptance testing, technical checks, punch lists and system validation.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>Offshore Project Support</h3>
+                <p>
+                    Experience-led input for vessel-based operations, inspection/intervention scopes and project delivery.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-line"></div>
+                <h3>Subsea Documentation</h3>
+                <p>
+                    Structured documentation support for offshore work scopes, records, assurance and handover packs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="digital" class="dark-band">
+        <span class="app-badge">Digital development</span>
+
+        <div class="two-column">
+            <div>
+                <h2>Apps built for offshore users</h2>
+
+                <p>
+                    Thuinn Subsea is developing digital tools designed around real offshore workflows,
+                    not generic office processes.
+                </p>
+
+                <p>
+                    The focus is on simple, practical apps that help offshore professionals organise records,
+                    capture evidence, manage certificates and produce useful outputs while working in demanding
+                    offshore environments.
+                </p>
+            </div>
+
+            <div>
+                <h3>Current development focus</h3>
+
+                <p>
+                    Offshore Logbook is a local-first iOS app for offshore, subsea and ROV professionals to record
+                    work history, manage certificates, attach evidence and export professional logbook records.
+                </p>
+
+                <p>
+                    App support and privacy information are provided separately for users and App Store review.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid">
         <div class="feature">
             <div class="feature-line"></div>
-            <h3>ROV Operations</h3>
-            <p>Support for remotely operated vehicle operations, tooling, planning and offshore execution.</p>
+            <h3>Built from field experience</h3>
+            <p>
+                Digital tools shaped around the kind of information offshore users actually need to capture and reuse.
+            </p>
         </div>
 
         <div class="feature">
             <div class="feature-line"></div>
-            <h3>Subsea Projects</h3>
-            <p>Practical support for subsea construction, inspection, intervention and operational delivery.</p>
+            <h3>Local-first approach</h3>
+            <p>
+                Preference for privacy-aware, user-controlled tools that work well without relying on constant connectivity.
+            </p>
         </div>
 
         <div class="feature">
             <div class="feature-line"></div>
-            <h3>Offshore Experience</h3>
-            <p>Experience-led input for vessel-based operations, project support and offshore coordination.</p>
+            <h3>Professional outputs</h3>
+            <p>
+                Focus on structured records, evidence, exports and documentation that support professional workflows.
+            </p>
         </div>
+    </section>
 
-        <div class="feature">
-            <div class="feature-line"></div>
-            <h3>Professional Delivery</h3>
-            <p>A straightforward, reliable and detail-focused approach to subsea and offshore scopes.</p>
-        </div>
-    </div>
-
-    <div class="card">
+    <section id="contact" class="card contact">
         <h2>Contact</h2>
 
         <p>
-            For enquiries, contact Thuinn Subsea Limited by email.
+            For ROV, offshore technical support, project support or digital tool enquiries, contact Thuinn Subsea Limited.
         </p>
 
         <p>
@@ -234,12 +518,12 @@
                 ryan@thuinnsubsea.co.uk
             </a>
         </p>
-    </div>
+    </section>
 
-</div>
+</main>
 
 <footer>
-    © 2026 Thuinn Subsea Limited
+    © 2026 Thuinn Subsea Limited · ROV & Offshore Technical Support
 </footer>
 
 </body>
