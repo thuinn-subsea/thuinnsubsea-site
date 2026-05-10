@@ -16,6 +16,7 @@
             --white: #ffffff;
             --muted: #b9d1da;
             --dark-text: #14243a;
+            --soft-text: #5f7185;
         }
 
         * {
@@ -38,22 +39,30 @@
             min-height: 88vh;
             position: relative;
             overflow: hidden;
-            padding: 34px 24px 58px;
+            padding: 38px 24px 70px;
             background:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
                 radial-gradient(circle at 78% 18%, rgba(0, 167, 181, 0.35), transparent 34%),
                 radial-gradient(circle at 18% 86%, rgba(24, 169, 212, 0.18), transparent 32%),
                 linear-gradient(135deg, #04111f 0%, #082039 48%, #123b58 100%);
+            background-size:
+                58px 58px,
+                58px 58px,
+                auto,
+                auto,
+                auto;
         }
 
         .background-wave {
             position: absolute;
-            right: -350px;
-            top: -40px;
-            width: 1350px;
+            right: -370px;
+            top: -55px;
+            width: 1380px;
             max-width: none;
-            opacity: 0.16;
+            opacity: 0.17;
             pointer-events: none;
-            filter: drop-shadow(0 0 70px rgba(0, 167, 181, 0.3));
+            filter: drop-shadow(0 0 80px rgba(0, 167, 181, 0.32));
         }
 
         .topbar {
@@ -61,34 +70,35 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .wordmark-text {
-            color: rgba(255, 255, 255, 0.88);
-            font-weight: 900;
-            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.94);
+            font-weight: 950;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            font-size: 0.95rem;
+            font-size: 1.25rem;
+            line-height: 1.05;
         }
 
         .wordmark-text span {
             color: #8fd6d2;
-            font-weight: 800;
-            letter-spacing: 5px;
-            font-size: 0.72rem;
+            font-weight: 850;
+            letter-spacing: 7px;
+            font-size: 0.82rem;
             display: block;
-            margin-top: 2px;
+            margin-top: 8px;
         }
 
         nav a {
             color: var(--ice);
             text-decoration: none;
-            margin-left: 26px;
-            font-weight: 700;
-            opacity: 0.86;
+            margin-left: 28px;
+            font-weight: 750;
+            opacity: 0.88;
         }
 
         nav a:hover {
@@ -104,11 +114,36 @@
             grid-template-columns: 1fr;
             align-items: center;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .hero-content {
-            max-width: 820px;
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #dffcff;
+            border: 1px solid rgba(143, 214, 210, 0.24);
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 999px;
+            padding: 9px 14px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 850;
+            margin-bottom: 24px;
+            box-shadow: 0 0 28px rgba(0, 167, 181, 0.08);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background: linear-gradient(135deg, var(--teal), var(--cyan));
+            box-shadow: 0 0 16px rgba(0, 167, 181, 0.75);
         }
 
         .eyebrow {
@@ -116,7 +151,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 0.78rem;
-            font-weight: 800;
+            font-weight: 850;
             margin-bottom: 18px;
         }
 
@@ -128,7 +163,7 @@
         }
 
         .intro {
-            max-width: 660px;
+            max-width: 670px;
             font-size: 1.2rem;
             color: var(--muted);
             margin-bottom: 34px;
@@ -141,7 +176,7 @@
             background: linear-gradient(135deg, var(--teal), var(--cyan));
             color: white;
             text-decoration: none;
-            font-weight: 800;
+            font-weight: 850;
             box-shadow: 0 18px 38px rgba(0, 167, 181, 0.28);
         }
 
@@ -152,20 +187,53 @@
             margin-left: 12px;
         }
 
+        .signal-line {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 167, 181, 0.1),
+                rgba(24, 169, 212, 0.9),
+                rgba(0, 167, 181, 0.1),
+                transparent
+            );
+            box-shadow: 0 0 18px rgba(0, 167, 181, 0.45);
+        }
+
         main {
             background: #ffffff;
             color: var(--dark-text);
+            position: relative;
+        }
+
+        .floating-logo {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            height: 0;
+            z-index: 4;
+        }
+
+        .floating-logo img {
+            width: 230px;
+            border-radius: 24px;
+            opacity: 0.92;
+            transform: translateY(-50%);
+            box-shadow: 0 24px 60px rgba(6, 23, 40, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.16);
         }
 
         .section {
             max-width: 1120px;
             margin: auto;
-            padding: 72px 24px;
+            padding: 96px 24px 78px;
         }
 
         .section-heading {
-            max-width: 760px;
-            margin-bottom: 38px;
+            max-width: 790px;
+            margin-bottom: 42px;
         }
 
         .section-heading h2 {
@@ -177,50 +245,62 @@
         }
 
         .section-heading p {
-            color: #5f7185;
+            color: var(--soft-text);
             font-size: 1.08rem;
             margin: 0;
         }
 
-        .capabilities {
+        .service-strips {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 18px;
         }
 
-        .capability {
-            border-radius: 28px;
-            padding: 32px;
-            background: #f5fbfc;
+        .service-strip {
+            display: grid;
+            grid-template-columns: 0.36fr 1fr;
+            gap: 26px;
+            align-items: center;
+            padding: 28px 32px;
+            border-radius: 26px;
+            background:
+                linear-gradient(135deg, rgba(0, 167, 181, 0.07), rgba(24, 169, 212, 0.03)),
+                #f5fbfc;
             border: 1px solid rgba(0, 167, 181, 0.16);
         }
 
-        .capability span {
-            display: block;
-            width: 52px;
+        .service-strip h3 {
+            color: var(--navy);
+            font-size: 1.28rem;
+            margin: 0;
+        }
+
+        .service-strip p {
+            color: #66788c;
+            margin: 0;
+            font-size: 1.02rem;
+        }
+
+        .strip-line {
+            width: 54px;
             height: 5px;
             border-radius: 99px;
             background: linear-gradient(to right, var(--teal), var(--cyan));
-            margin-bottom: 20px;
-        }
-
-        .capability h3 {
-            color: var(--navy);
-            margin: 0 0 12px;
-            font-size: 1.35rem;
-        }
-
-        .capability p {
-            color: #66788c;
-            margin: 0;
+            margin-bottom: 16px;
         }
 
         .digital-band {
             position: relative;
             overflow: hidden;
             background:
+                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
                 radial-gradient(circle at 86% 34%, rgba(0, 167, 181, 0.23), transparent 34%),
                 linear-gradient(135deg, #061728, #123b58);
+            background-size:
+                62px 62px,
+                62px 62px,
+                auto,
+                auto;
             color: white;
         }
 
@@ -238,7 +318,7 @@
         .digital-inner {
             max-width: 1120px;
             margin: auto;
-            padding: 82px 24px;
+            padding: 86px 24px;
             display: grid;
             grid-template-columns: 1fr;
             position: relative;
@@ -246,7 +326,7 @@
         }
 
         .digital-content {
-            max-width: 720px;
+            max-width: 740px;
             margin-left: auto;
         }
 
@@ -261,11 +341,19 @@
             font-size: 1.08rem;
         }
 
+        .environment-line {
+            margin-top: 24px;
+            padding-left: 18px;
+            border-left: 4px solid var(--teal);
+            color: #e8fbfd !important;
+            font-weight: 750;
+        }
+
         .pill-row {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-top: 26px;
+            margin-top: 28px;
         }
 
         .pill {
@@ -274,7 +362,7 @@
             color: #dffcff;
             border: 1px solid rgba(143, 214, 210, 0.28);
             background: rgba(255, 255, 255, 0.07);
-            font-weight: 700;
+            font-weight: 750;
             font-size: 0.9rem;
         }
 
@@ -297,6 +385,21 @@
             margin-bottom: 26px;
         }
 
+        .contact-links {
+            margin-top: 22px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .contact-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-bottom: 2px solid rgba(0, 167, 181, 0.35);
+        }
+
         footer {
             background: #f5fbfc;
             color: #66788c;
@@ -310,14 +413,23 @@
                 min-height: auto;
             }
 
+            .topbar {
+                align-items: flex-start;
+            }
+
+            .wordmark-text {
+                font-size: 1.05rem;
+            }
+
+            .wordmark-text span {
+                font-size: 0.72rem;
+                letter-spacing: 5px;
+            }
+
             .hero {
                 min-height: auto;
                 padding-top: 82px;
                 padding-bottom: 70px;
-            }
-
-            .capabilities {
-                grid-template-columns: 1fr;
             }
 
             nav {
@@ -336,8 +448,39 @@
                 opacity: 0.13;
             }
 
+            .floating-logo img {
+                width: 185px;
+            }
+
+            .service-strip {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
             .digital-content {
                 margin-left: 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            header {
+                padding: 30px 18px 50px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .badge {
+                line-height: 1.4;
+            }
+
+            .section {
+                padding-top: 82px;
+            }
+
+            .floating-logo img {
+                width: 160px;
             }
         }
     </style>
@@ -363,6 +506,11 @@
 
     <section class="hero">
         <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Currently developing offshore digital tools
+            </div>
+
             <div class="eyebrow">ROV · Offshore · Technical Support</div>
 
             <h1>Subsea support with a sharper digital edge.</h1>
@@ -378,7 +526,13 @@
     </section>
 </header>
 
+<div class="signal-line"></div>
+
 <main>
+
+    <div class="floating-logo">
+        <img src="thuinn-dark-logo.png" alt="Thuinn Subsea Limited logo">
+    </div>
 
     <section id="capabilities" class="section">
         <div class="section-heading">
@@ -389,26 +543,40 @@
             </p>
         </div>
 
-        <div class="capabilities">
-            <div class="capability">
-                <span></span>
-                <h3>ROV Technical Support</h3>
-                <p>Operationally aware support for ROV systems, readiness, tooling and technical preparation.</p>
+        <div class="service-strips">
+            <div class="service-strip">
+                <div>
+                    <div class="strip-line"></div>
+                    <h3>ROV Technical Support</h3>
+                </div>
+                <p>
+                    Operationally aware support for ROV systems, readiness, tooling and technical preparation.
+                </p>
             </div>
 
-            <div class="capability">
-                <span></span>
-                <h3>Assurance & Documentation</h3>
-                <p>Structured support for technical assurance, FAT activity, system checks and project records.</p>
+            <div class="service-strip">
+                <div>
+                    <div class="strip-line"></div>
+                    <h3>Assurance & Documentation</h3>
+                </div>
+                <p>
+                    Structured support for technical assurance, FAT activity, system checks and project records.
+                </p>
             </div>
 
-            <div class="capability">
-                <span></span>
-                <h3>Offshore Workflow Tools</h3>
-                <p>Digital tools and app concepts designed around the needs of offshore professionals.</p>
+            <div class="service-strip">
+                <div>
+                    <div class="strip-line"></div>
+                    <h3>Offshore Workflow Tools</h3>
+                </div>
+                <p>
+                    Digital tools and app concepts designed around the practical needs of offshore professionals.
+                </p>
             </div>
         </div>
     </section>
+
+    <div class="signal-line"></div>
 
     <section id="digital" class="digital-band">
         <div class="digital-inner">
@@ -425,6 +593,10 @@
                     complexity.
                 </p>
 
+                <p class="environment-line">
+                    Built for harsh, low-connectivity offshore environments.
+                </p>
+
                 <div class="pill-row">
                     <span class="pill">Structured records</span>
                     <span class="pill">Evidence capture</span>
@@ -434,6 +606,8 @@
             </div>
         </div>
     </section>
+
+    <div class="signal-line"></div>
 
     <section id="contact" class="contact">
         <h2>Contact</h2>
@@ -445,6 +619,11 @@
         <a class="button" href="mailto:ryan@thuinnsubsea.co.uk">
             ryan@thuinnsubsea.co.uk
         </a>
+
+        <div class="contact-links">
+            <a href="mailto:ryan@thuinnsubsea.co.uk">Email</a>
+            <a href="https://www.linkedin.com/company/thuinn-subsea/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
     </section>
 
 </main>
