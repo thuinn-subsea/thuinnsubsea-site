@@ -4,102 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thuinn Subsea Limited</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="thuinn-wave-mark.png">
 
     <style>
         :root {
-            --navy: #172f52;
             --deep: #061728;
+            --navy: #102b47;
+            --mid: #17476a;
             --teal: #00a7b5;
-            --cyan: #1598c7;
-            --pale: #f4fbfc;
-            --text: #1b2b3f;
-            --muted: #66788c;
+            --cyan: #18a9d4;
+            --ice: #eaf8fb;
+            --white: #ffffff;
+            --muted: #b9d1da;
+            --dark-text: #14243a;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            color: var(--text);
-            background: white;
+            background: var(--deep);
+            color: var(--white);
             line-height: 1.6;
         }
 
         header {
-            min-height: 92vh;
-            padding: 34px 22px 70px;
-            color: white;
+            min-height: 94vh;
+            position: relative;
+            overflow: hidden;
+            padding: 34px 24px 80px;
             background:
-                radial-gradient(circle at 75% 20%, rgba(0, 167, 181, 0.45), transparent 28%),
-                radial-gradient(circle at 15% 85%, rgba(21, 152, 199, 0.28), transparent 30%),
-                linear-gradient(135deg, #061728 0%, #0b2942 48%, #123d55 100%);
-            display: flex;
-            flex-direction: column;
+                radial-gradient(circle at 80% 15%, rgba(0, 167, 181, 0.32), transparent 34%),
+                radial-gradient(circle at 20% 85%, rgba(24, 169, 212, 0.22), transparent 34%),
+                linear-gradient(135deg, #04111f 0%, #082039 48%, #123b58 100%);
+        }
+
+        .hero-wave {
+            position: absolute;
+            right: -140px;
+            top: 110px;
+            width: 760px;
+            max-width: 80vw;
+            opacity: 0.18;
+            pointer-events: none;
         }
 
         .topbar {
-            max-width: 1150px;
-            width: 100%;
+            max-width: 1160px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1.6px;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
         }
 
         nav a {
-            color: #d7f7f8;
+            color: var(--ice);
             text-decoration: none;
-            margin-left: 24px;
+            margin-left: 26px;
             font-weight: 700;
+            opacity: 0.86;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: #8fd6d2;
         }
 
         .hero {
-            max-width: 1150px;
-            width: 100%;
-            margin: auto;
+            max-width: 1160px;
+            margin: 0 auto;
+            min-height: 72vh;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 54px;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .logo {
-            width: 470px;
-            max-width: 100%;
-            background: white;
-            padding: 22px;
-            border-radius: 28px;
-            box-shadow: 0 28px 70px rgba(0,0,0,0.25);
+        .wordmark {
+            width: 390px;
+            max-width: 92%;
+            margin-bottom: 34px;
         }
 
         .eyebrow {
             color: #8fd6d2;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: clamp(2.7rem, 6vw, 5.2rem);
-            line-height: 1;
-            margin: 0 0 24px;
-            letter-spacing: -2px;
+            font-size: clamp(2.9rem, 6vw, 5.7rem);
+            line-height: 0.98;
+            letter-spacing: -2.5px;
+            margin: 0 0 28px;
+            max-width: 780px;
         }
 
         .intro {
             max-width: 650px;
-            font-size: 1.22rem;
-            color: #dcecef;
-            margin-bottom: 32px;
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 34px;
         }
 
         .button {
@@ -110,124 +139,182 @@
             color: white;
             text-decoration: none;
             font-weight: 800;
-            box-shadow: 0 16px 35px rgba(0, 167, 181, 0.3);
+            box-shadow: 0 18px 38px rgba(0, 167, 181, 0.28);
+        }
+
+        .button.secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: none;
+            margin-left: 12px;
+        }
+
+        .hero-card {
+            border-radius: 34px;
+            padding: 34px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+        }
+
+        .hero-card img {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
         }
 
         main {
+            background: #ffffff;
+            color: var(--dark-text);
+        }
+
+        .section {
             max-width: 1120px;
             margin: auto;
-            padding: 70px 22px;
+            padding: 78px 24px;
         }
 
-        .section-title {
+        .section-heading {
             max-width: 760px;
-            margin-bottom: 32px;
+            margin-bottom: 38px;
         }
 
-        .section-title h2 {
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.05;
             color: var(--navy);
-            font-size: 2.5rem;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            margin: 0 0 16px;
+            letter-spacing: -1.2px;
         }
 
-        .section-title p {
-            color: var(--muted);
+        .section-heading p {
+            color: #5f7185;
             font-size: 1.08rem;
+            margin: 0;
         }
 
         .capabilities {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            margin-bottom: 70px;
         }
 
         .capability {
-            padding: 30px;
-            border-radius: 26px;
-            background: var(--pale);
-            border: 1px solid rgba(0, 167, 181, 0.15);
+            border-radius: 28px;
+            padding: 32px;
+            background: #f5fbfc;
+            border: 1px solid rgba(0, 167, 181, 0.16);
         }
 
         .capability span {
             display: block;
-            width: 48px;
+            width: 52px;
             height: 5px;
-            border-radius: 999px;
+            border-radius: 99px;
             background: linear-gradient(to right, var(--teal), var(--cyan));
             margin-bottom: 20px;
         }
 
         .capability h3 {
             color: var(--navy);
-            margin-top: 0;
+            margin: 0 0 12px;
+            font-size: 1.35rem;
         }
 
         .capability p {
-            color: var(--muted);
-            margin-bottom: 0;
+            color: #66788c;
+            margin: 0;
         }
 
-        .split {
+        .digital-band {
+            background:
+                radial-gradient(circle at right, rgba(0, 167, 181, 0.25), transparent 36%),
+                linear-gradient(135deg, #061728, #123b58);
+            color: white;
+        }
+
+        .digital-inner {
+            max-width: 1120px;
+            margin: auto;
+            padding: 80px 24px;
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
-            gap: 34px;
+            gap: 46px;
             align-items: center;
-            background: linear-gradient(135deg, var(--deep), var(--navy));
-            color: white;
-            border-radius: 34px;
-            padding: 44px;
-            margin-bottom: 70px;
-            overflow: hidden;
         }
 
-        .wave-mark {
-            font-size: 8rem;
-            line-height: 1;
-            opacity: 0.24;
+        .digital-mark {
+            width: 300px;
+            max-width: 70%;
+            opacity: 0.92;
+            margin: auto;
+            display: block;
         }
 
-        .split h2 {
-            font-size: 2.2rem;
-            margin-top: 0;
+        .digital-band h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+            margin: 0 0 22px;
         }
 
-        .split p {
-            color: #d7e6ec;
-            font-size: 1.05rem;
+        .digital-band p {
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .pill {
+            padding: 9px 14px;
+            border-radius: 999px;
+            color: #dffcff;
+            border: 1px solid rgba(143, 214, 210, 0.28);
+            background: rgba(255, 255, 255, 0.07);
+            font-weight: 700;
+            font-size: 0.9rem;
         }
 
         .contact {
             text-align: center;
-            padding: 52px 24px;
-            border-radius: 34px;
-            background:
-                radial-gradient(circle at top, rgba(0, 167, 181, 0.16), transparent 32%),
-                var(--pale);
+            max-width: 850px;
+            margin: auto;
+            padding: 82px 24px;
         }
 
         .contact h2 {
             color: var(--navy);
-            font-size: 2.3rem;
-            margin-bottom: 12px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin: 0 0 14px;
         }
 
         .contact p {
-            color: var(--muted);
+            color: #66788c;
+            font-size: 1.08rem;
+            margin-bottom: 26px;
         }
 
         footer {
+            background: #f5fbfc;
+            color: #66788c;
             text-align: center;
-            padding: 35px 20px;
-            color: var(--muted);
-            background: var(--pale);
+            padding: 34px 20px;
+            border-top: 1px solid rgba(16, 43, 71, 0.1);
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
             .hero,
-            .split {
+            .digital-inner {
                 grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 70px;
             }
 
             .capabilities {
@@ -238,8 +325,14 @@
                 display: none;
             }
 
-            header {
-                min-height: auto;
+            .button.secondary {
+                margin-left: 0;
+                margin-top: 12px;
+            }
+
+            .hero-wave {
+                right: -220px;
+                opacity: 0.12;
             }
         }
     </style>
@@ -248,8 +341,13 @@
 <body>
 
 <header>
+    <img src="thuinn-hero-wave.png" alt="" class="hero-wave">
+
     <div class="topbar">
-        <div class="brand">THUINN SUBSEA LIMITED</div>
+        <div class="brand">
+            <img src="thuinn-wave-mark.png" alt="Thuinn Subsea mark">
+            <span>THUINN SUBSEA LIMITED</span>
+        </div>
 
         <nav>
             <a href="#capabilities">Capabilities</a>
@@ -258,34 +356,37 @@
         </nav>
     </div>
 
-    <div class="hero">
+    <section class="hero">
         <div>
+            <img src="thuinn-wordmark.png" alt="Thuinn Subsea Limited" class="wordmark">
+
             <div class="eyebrow">ROV · Offshore · Technical Support</div>
 
-            <h1>Innovative subsea support with a practical offshore edge.</h1>
+            <h1>Subsea support with a sharper digital edge.</h1>
 
             <p class="intro">
-                Thuinn Subsea Limited supports subsea and offshore work through ROV technical knowledge,
-                assurance-focused thinking and digital tools built around real offshore workflows.
+                Thuinn Subsea Limited supports offshore and subsea work through ROV technical knowledge,
+                assurance-focused thinking and practical digital tools built around real offshore workflows.
             </p>
 
             <a class="button" href="mailto:ryan@thuinnsubsea.co.uk">Contact Thuinn Subsea</a>
+            <a class="button secondary" href="#digital">Digital tools</a>
         </div>
 
-        <div>
-            <img src="thuinn-logo.png" alt="Thuinn Subsea Limited Logo" class="logo">
+        <div class="hero-card">
+            <img src="thuinn-dark-logo.png" alt="Thuinn Subsea dark logo">
         </div>
-    </div>
+    </section>
 </header>
 
 <main>
 
-    <section id="capabilities">
-        <div class="section-title">
+    <section id="capabilities" class="section">
+        <div class="section-heading">
             <h2>Technical support, assurance and practical delivery.</h2>
             <p>
-                Focused support for offshore and subsea environments where clear records, reliable preparation
-                and practical technical understanding matter.
+                Focused support for offshore and subsea environments where clear records,
+                reliable preparation and practical technical understanding matter.
             </p>
         </div>
 
@@ -310,20 +411,31 @@
         </div>
     </section>
 
-    <section id="digital" class="split">
-        <div class="wave-mark">≈</div>
+    <section id="digital" class="digital-band">
+        <div class="digital-inner">
+            <div>
+                <img src="thuinn-wave-mark.png" alt="Thuinn Subsea wave mark" class="digital-mark">
+            </div>
 
-        <div>
-            <h2>Digital tools for offshore users.</h2>
+            <div>
+                <h2>Apps and tools for offshore users.</h2>
 
-            <p>
-                Thuinn Subsea is developing practical software tools for offshore, subsea and ROV professionals,
-                with a focus on private records, evidence capture, certificates, reporting and export-ready data.
-            </p>
+                <p>
+                    Thuinn Subsea is developing practical software tools for offshore, subsea and ROV professionals,
+                    with a focus on private records, evidence capture, certificates, reporting and export-ready data.
+                </p>
 
-            <p>
-                Current development includes Offshore Logbook, a local-first iOS app for managing offshore career records.
-            </p>
+                <p>
+                    Current development includes Offshore Logbook, a local-first iOS app for managing offshore career records.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Local-first records</span>
+                    <span class="pill">Evidence capture</span>
+                    <span class="pill">Certificate tracking</span>
+                    <span class="pill">Professional exports</span>
+                </div>
+            </div>
         </div>
     </section>
 
