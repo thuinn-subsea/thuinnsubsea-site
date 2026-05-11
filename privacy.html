@@ -37,37 +37,80 @@
         }
 
         header {
-            background: radial-gradient(circle at top, #123d55, #071722 65%);
+            background:
+                radial-gradient(circle at top, rgba(0, 167, 181, 0.25), transparent 40%),
+                linear-gradient(135deg, #071722, #123d55);
             text-align: center;
-            padding: 55px 20px 35px;
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 52px 52px;
+            pointer-events: none;
         }
 
         .logo {
             width: 95px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
         }
 
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 45px 20px;
+            padding: 50px 20px;
         }
 
         .card {
-            background: linear-gradient(145deg, #102738, #0c2030);
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            background:
+                linear-gradient(145deg, rgba(16, 39, 56, 0.96), rgba(12, 32, 48, 0.96));
+            padding: 32px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
             border: 1px solid rgba(143, 214, 210, 0.12);
         }
 
-        h1, h2 {
+        h1 {
+            color: white;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        h2 {
             color: #8fd6d2;
+            margin-top: 0;
+        }
+
+        p {
+            color: #d7e6ec;
         }
 
         a {
             color: #8fd6d2;
+        }
+
+        .highlight-line {
+            margin-top: 20px;
+            padding-left: 18px;
+            border-left: 4px solid #00a7b5;
+            color: #eefbff;
+            font-weight: 600;
         }
 
         footer {
@@ -76,12 +119,21 @@
             color: #8aa4b5;
             font-size: 0.9rem;
             border-top: 1px solid rgba(143, 214, 210, 0.12);
+            background-color: #071722;
         }
 
         @media (max-width: 600px) {
             nav a {
                 display: inline-block;
                 margin: 6px 10px;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            .card {
+                padding: 24px;
             }
         }
     </style>
@@ -97,8 +149,12 @@
 
 <header>
     <img src="logo.png" alt="Thuinn Subsea Logo" class="logo">
+
     <h1>Privacy Policy</h1>
-    <p>Offshore Logbook by Thuinn Subsea</p>
+
+    <p>
+        Offshore Logbook by Thuinn Subsea
+    </p>
 </header>
 
 <div class="container">
@@ -107,13 +163,36 @@
         <h2>Local-First Data Storage</h2>
 
         <p>
-            Offshore Logbook stores logbook entries, profile details, certificates, evidence files,
-            signatures and settings locally on the user's device.
+            Offshore Logbook stores logbook entries, profile details, certificates,
+            evidence files, signatures and app settings locally on the user's device.
         </p>
 
         <p>
-            The app does not operate a backend service, create app-managed user accounts or automatically
-            upload personal logbook data.
+            The app does not operate a dedicated backend service, create app-managed
+            user accounts or automatically upload personal logbook data.
+        </p>
+
+        <p>
+            Evidence files, images and records remain stored locally unless the user
+            manually exports or shares them using Apple system sharing tools.
+        </p>
+
+        <p class="highlight-line">
+            Your offshore records remain under your control unless you choose to share them.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>No Tracking or Advertising</h2>
+
+        <p>
+            Offshore Logbook does not use third-party advertising SDKs, behavioural
+            tracking technologies or analytics services for advertising purposes.
+        </p>
+
+        <p>
+            The app does not sell personal data or share personal information with
+            advertising providers.
         </p>
     </div>
 
@@ -121,21 +200,31 @@
         <h2>User-Controlled Sharing</h2>
 
         <p>
-            Users may choose to export PDFs, CVs, backups or feedback emails using Apple sharing tools.
-            Any sharing action is initiated by the user.
+            Users may choose to export PDFs, CVs, backups or feedback emails using
+            Apple sharing tools. Any sharing action is initiated directly by the user.
         </p>
 
         <p>
-            Users are responsible for reviewing exported records before sharing them professionally.
+            Users are responsible for reviewing and protecting exported records once
+            shared outside the app.
         </p>
     </div>
 
     <div class="card">
-        <h2>Subscriptions</h2>
+        <h2>Subscriptions & Payments</h2>
 
         <p>
             Subscription validation and purchase management are handled through Apple services.
-            Offshore Logbook does not directly collect payment card details.
+            Offshore Logbook does not directly collect or store payment card information.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Data Deletion</h2>
+
+        <p>
+            Because Offshore Logbook stores data locally on-device, users may remove
+            their data at any time by deleting app content or uninstalling the app.
         </p>
     </div>
 
@@ -144,7 +233,9 @@
 
         <p>
             For privacy or support questions, contact:
-            <a href="mailto:ryan@thuinnsubsea.co.uk">ryan@thuinnsubsea.co.uk</a>
+            <a href="mailto:ryan@thuinnsubsea.co.uk">
+                ryan@thuinnsubsea.co.uk
+            </a>
         </p>
 
         <p>
