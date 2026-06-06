@@ -6,8 +6,11 @@
     "category": "PPE",
     "description": "10% off selected offshore PPE",
     "code": "OFFSHORE10",
-    "note": "Example listing for future affiliate/partner deal.",
-    "url": "https://thuinnsubsea.co.uk/industry-discounts.html",
+    "note": "Example listing for future affiliate or partner deal.",
+    "url": "https://www.thuinnsubsea.co.uk/industry-discounts.html",
+    "featured": true,
+    "premiumOnly": false,
+    "expires": "",
     "isActive": true
   },
   {
@@ -15,10 +18,13 @@
     "title": "Tool Bag & Hand Tools",
     "supplier": "Example Tool Store",
     "category": "Tools",
-    "description": "Save on tool bags and basic hand tools",
+    "description": "Save on tool bags and basic hand tools.",
     "code": "ROVTOOLS",
     "note": "Useful for ROV techs, supervisors and offshore crew.",
-    "url": "https://thuinnsubsea.co.uk/industry-discounts.html",
+    "url": "https://www.thuinnsubsea.co.uk/industry-discounts.html",
+    "featured": false,
+    "premiumOnly": false,
+    "expires": "",
     "isActive": true
   },
   {
@@ -26,10 +32,13 @@
     "title": "Training Course Discount",
     "supplier": "Example Training Centre",
     "category": "Training",
-    "description": "Discount on selected refresher courses",
+    "description": "Discount on selected refresher courses.",
     "code": "CREWTRAINING",
     "note": "Could later link to BOSIET, MIST, IMCA or first aid training.",
-    "url": "https://thuinnsubsea.co.uk/industry-discounts.html",
+    "url": "https://www.thuinnsubsea.co.uk/industry-discounts.html",
+    "featured": false,
+    "premiumOnly": false,
+    "expires": "",
     "isActive": true
   }
 ]
